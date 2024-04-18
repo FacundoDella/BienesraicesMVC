@@ -73,6 +73,14 @@ class PaginasController
             $mail->SMTPSecure = 'tls'; // Encriptacion
             $mail->Port = 2525; // Puerto
 
+            // Configurando el contenido del mail
+            $mail->setFrom('admin@bienesraices.com'); // Quien envia el email
+            $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com'); // Quien lo recibe
+            $mail->Subject = 'Tienes un Nuevo Mensaje';
+
+            // Habilitar HTML
+            $mail->isHTML(true);
+            $mail->CharSet = 'UTF-8';
 
             
         }
