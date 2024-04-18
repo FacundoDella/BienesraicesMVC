@@ -82,7 +82,17 @@ class PaginasController
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';
 
-            
+            // Definir el contenido
+            $contenido = '<html> <p> Tienes un nuevo mensaje </p> </html>';
+
+            $mail->Body = $contenido;
+
+
+            if ($mail->send()) {
+                echo "Mensaje enviado Correctamente";
+            } else {
+                echo "El mensaje no se pudo enviar...";
+            }
         }
 
         $router->render('/paginas/contacto', []);
