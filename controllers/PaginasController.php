@@ -4,6 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Propiedad;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class PaginasController
 {
@@ -58,8 +59,22 @@ class PaginasController
 
     public static function contacto(Router $router)
     {
-        if($_SERVER['REQUEST_METHOD']=== 'POST'){
-           
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            // Crear una instancia de PHPMailer
+            $mail = new PHPMailer();
+
+            // Configurar SMTP (protocolo para enviar emails)
+            $mail->isSMTP();
+            $mail->Host = 'sandbox.smtp.mailtrap.io'; // El Host tomado desde MailTrap
+            $mail->SMTPAuth = true;
+            $mail->Username = 'a5894295f2d27e';
+            $mail->Password = '********3db0';
+            $mail->SMTPSecure = 'tls'; // Encriptacion
+            $mail->Port = 2525; // Puerto
+
+
+            
         }
 
         $router->render('/paginas/contacto', []);
