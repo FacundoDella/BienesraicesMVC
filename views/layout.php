@@ -1,7 +1,9 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
-$auth = isset($_SESSION['login']) ? $_SESSION['login'] : false;
+$auth = isset($_SESSION['login']) ?? false;
 
 if (!isset($inicio)) {
     $inicio = false;
