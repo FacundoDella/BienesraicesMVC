@@ -35,7 +35,7 @@
             </select>
 
             <label for="presupuesto">Precio o Presupuesto</label>
-            <input type="number" placeholder="Tu Precio o Presupuesto" id="presupuesto" name="contacto[precio]" required >
+            <input type="number" placeholder="Tu Precio o Presupuesto" id="presupuesto" name="contacto[precio]" required>
         </fieldset>
 
         <fieldset>
@@ -44,10 +44,10 @@
             <p>Como desea ser contactado</p>
             <div class="forma-contacto">
                 <label for="contactar-telefono">Teléfono</label>
-                <input name="opcion" value="telefono" type="radio" id="contactar-telefono" name="contacto[contacto]" required>
+                <input value="telefono" type="radio" id="contactar-telefono" name="contacto[contacto]" required>
 
                 <label for="contactar-email">E-mail</label>
-                <input name="opcion" value="email" type="radio" id="contactar-email" name="contacto[contacto]" required>
+                <input value="email" type="radio" id="contactar-email" name="contacto[contacto]" required>
             </div>
 
             <p>Si eligió telefono, elija la fecha y la hora</p>
@@ -55,7 +55,7 @@
             <input type="date" id="fecha" name="contacto[fecha]">
 
             <label for="hora">Hora</label>
-            <input type="time" id="hora" min="09:00" max="18:00" name="contacto[hora]" >
+            <input type="time" id="hora" min="09:00" max="18:00" name="contacto[hora]">
         </fieldset>
 
         <input type="submit" value="Enviar" class="boton-verde">

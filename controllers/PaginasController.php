@@ -60,18 +60,18 @@ class PaginasController
     public static function contacto(Router $router)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+            $respuestas = $_POST['contacto'];
             // Crear una instancia de PHPMailer
             $mail = new PHPMailer();
 
             // Configurar SMTP (protocolo para enviar emails)
             $mail->isSMTP();
-            $mail->Host = 'sandbox.smtp.mailtrap.io'; // El Host tomado desde MailTrap
+            $mail->Host = 'sandbox.smtp.mailtrap.io';
             $mail->SMTPAuth = true;
+            $mail->Port = 2525;
             $mail->Username = 'a5894295f2d27e';
-            $mail->Password = '********3db0';
-            $mail->SMTPSecure = 'tls'; // Encriptacion
-            $mail->Port = 2525; // Puerto
+            $mail->Password = '84c15d6b963db0';
+            $mail->SMTPSecure = 'tls';
 
             // Configurando el contenido del mail
             $mail->setFrom('admin@bienesraices.com'); // Quien envia el email
@@ -83,9 +83,22 @@ class PaginasController
             $mail->CharSet = 'UTF-8';
 
             // Definir el contenido
-            $contenido = '<html> <p> Tienes un nuevo mensaje </p> </html>';
+            $contenido = '<html>';
+            $contenido .= '<p>Tienes un nuevo mensaje</p>';
+            $contenido .= '<p>Nombre:  ' . $respuestas['nombre'] . ' </p>';
+            $contenido .= '<p>Mensaje:  ' . $respuestas['mensaje'] . ' </p>';
+            $contenido .= '<p>Email:  ' . $respuestas['email'] . ' </p>';
+            $contenido .= '<p>Teléfono:  ' . $respuestas['telefono'] . ' </p>';
+            $contenido .= '<p>Vende o Compra:  ' . $respuestas['tipo'] . ' </p>';
+            $contenido .= '<p>Precio o Presupuesto:  $' . $respuestas['precio'] . ' </p>';
+            $contenido .= '<p>Prefiere ser contactado por:  ' . $respuestas['contacto'] . ' </p>';
+            $contenido .= '<p>Fecha de contacto:  ' . $respuestas['fecha'] . ' </p>';
+            $contenido .= '<p>Hora:  ' . $respuestas['hora'] . ' </p>';
+            $contenido .= '</html>';
+
 
             $mail->Body = $contenido;
+            $mail->AltBody = 'Esto es un texto alternativo sin HTML';
 
 
             if ($mail->send()) {
