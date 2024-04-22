@@ -28,11 +28,22 @@ table.propiedades {
         }
     }
 
+    tbody{
+        td{
+            color: $blanco;
+            padding: 1rem;
+        }
+    }
+
     .imagen-tabla{
         width: 10rem;
     }
 }
 
 .imagen-small {
-    width: 25rem;
+    max-width: 25rem;
+}
+
+.descipcionPequeña{
+    max-width: 25rem;
 }

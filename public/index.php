@@ -3,6 +3,7 @@ require_once __DIR__ . '/../includes/app.php';
 
 // Importacion de las clases con su namespace desde composer.json
 
+use Controllers\EntradaController;
 use Controllers\LoginController;
 use MVC\Router;
 use Controllers\PropiedadController;
@@ -27,6 +28,13 @@ $router->get('/vendedores/actualizar', [VendedorController::class, 'actualizar']
 $router->post('/vendedores/actualizar', [VendedorController::class, 'actualizar']);
 $router->post('/vendedores/eliminar', [VendedorController::class, 'eliminar']);
 
+
+$router->get('/entradas/crear', [EntradaController::class, 'crear']);
+$router->post('/entradas/crear', [EntradaController::class, 'crear']);
+$router->get('/entradas/actualizar', [EntradaController::class, 'actualizar']);
+$router->post('/entradas/actualizar', [EntradaController::class, 'actualizar']);
+$router->post('/entradas/eliminar', [EntradaController::class, 'eliminar']);
+
 // Zona de Usuarios
 $router->get('/', [PaginasController::class, 'index']);
 $router->get('/nosotros', [PaginasController::class, 'nosotros']);
@@ -36,6 +44,7 @@ $router->get('/blog', [PaginasController::class, 'blog']);
 $router->get('/entrada', [PaginasController::class, 'entrada']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);
+
 
 // Login y Autenticacion
 

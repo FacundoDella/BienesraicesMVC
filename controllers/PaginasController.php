@@ -4,6 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Propiedad;
+use Model\Entrada;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class PaginasController
@@ -14,11 +15,15 @@ class PaginasController
     {
 
         $propiedades = Propiedad::get(3);
+        $entradas = Entrada::get(2);
+        $entradaDescripcion = false;
         $inicio = true; // Esta es la propiedad que requiere el layout.php para que funcione bien el header
 
         $router->render('/paginas/index', [
             'propiedades' => $propiedades,
             'inicio' => $inicio,
+            'entradas' => $entradas,
+            'entradaDescripcion' => $entradaDescripcion,
         ]);
     }
     public static function nosotros(Router $router)
@@ -47,14 +52,23 @@ class PaginasController
 
     public static function blog(Router $router)
     {
-
-        $router->render('/paginas/blog');
+        $entradaDescripcion = true;
+        $entradas = Entrada::all();
+        $router->render('/paginas/blog', [
+            'entradas' => $entradas,
+            'entradaDescripcion' => $entradaDescripcion,
+        ]);
     }
 
     public static function entrada(Router $router)
     {
 
-        $router->render('/paginas/entrada');
+        $id = validarORedireccionar('/blog');
+        $entrada = Entrada::find($id);
+
+        $router->render('/paginas/entrada', [
+            'entrada' => $entrada,
+        ]);
     }
 
     public static function contacto(Router $router)

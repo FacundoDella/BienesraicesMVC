@@ -25,6 +25,7 @@
     <section class="blog">
         <h3>Nuestro Blog</h3>
 
+<<<<<<< HEAD
         <article class="entrada-blog">
             <div class="imagen">
                 <picture>
@@ -62,6 +63,9 @@
                     vida a tu espacio</p>
             </div>
         </article>
+=======
+        <?php include 'listadoEntradas.php' ?>
+>>>>>>> rama1
     </section>
 
     <section class="testimoniales">
@@ -74,4 +78,3 @@
         </div>
     </section>
 </div>
-

@@ -81,3 +81,13 @@ function validarORedireccionar(string $url)
 
     return $id;
 }
+
+
+function acortarTexto($texto, $longitudMaxima) {
+    if (strlen($texto) > $longitudMaxima) {
+        // Corta la cadena a la longitud deseada y agrega "..."
+        return substr($texto, 0, $longitudMaxima - 3) . '...';
+    }
+    // Si no es demasiado largo, devuelve el texto original
+    return $texto;
+}
