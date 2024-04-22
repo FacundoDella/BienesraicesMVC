@@ -29,10 +29,14 @@ class Entrada extends ActiveRecord
 
     public function validar()
     {
-        if (!$this->titulo) {
+        if (empty($this->titulo)) {
             self::$errores[] = 'Debes añadir un título';
+        } else {
+            // Comprueba la longitud del título
+            if (strlen($this->titulo) > 45) {
+                self::$errores[] = 'El título es demasiado largo, debe tener 45 caracteres o menos';
+            }
         }
-
         if (!$this->subtitulo) {
             self::$errores[] = 'El subtítulo es obligatorio';
         }

@@ -16,12 +16,14 @@ class PaginasController
 
         $propiedades = Propiedad::get(3);
         $entradas = Entrada::get(2);
+        $entradaDescripcion = false;
         $inicio = true; // Esta es la propiedad que requiere el layout.php para que funcione bien el header
 
         $router->render('/paginas/index', [
             'propiedades' => $propiedades,
             'inicio' => $inicio,
             'entradas' => $entradas,
+            'entradaDescripcion' => $entradaDescripcion,
         ]);
     }
     public static function nosotros(Router $router)
@@ -50,9 +52,11 @@ class PaginasController
 
     public static function blog(Router $router)
     {
+        $entradaDescripcion = true;
         $entradas = Entrada::all();
         $router->render('/paginas/blog', [
             'entradas' => $entradas,
+            'entradaDescripcion' => $entradaDescripcion,
         ]);
     }
 

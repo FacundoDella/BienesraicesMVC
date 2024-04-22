@@ -14,7 +14,14 @@ foreach ($entradas as $entrada) {
                 <h4><?php echo $entrada->titulo ?></h4>
             </a>
             <p class="informacion-meta">Escrtio el <span><?php echo $entrada->creado; ?></span> por <span><?php echo $entrada->creador; ?></span></p>
-            <p><?php echo $entrada->descripcion; ?></p>
+            <p class="informacion-meta"><?php echo $entrada->subtitulo; ?></span></p>
+
+            <?php if ($entradaDescripcion) { ?>
+                <p>
+                    <?php echo acortarTexto($entrada->descripcion, 50); ?>
+                </p>
+            <?php } ?>
+
         </div>
     </article>
 <?php } ?>
