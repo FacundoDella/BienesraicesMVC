@@ -4,6 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Propiedad;
+use Model\Entrada;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class PaginasController
@@ -47,8 +48,11 @@ class PaginasController
 
     public static function blog(Router $router)
     {
+        $entradas = Entrada::all();
 
-        $router->render('/paginas/blog');
+        $router->render('/paginas/blog',[
+            'entradas'=>$entradas,
+        ]);
     }
 
     public static function entrada(Router $router)

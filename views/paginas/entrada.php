@@ -1,26 +1,17 @@
-<main class="contenedor seccion contenido-centrado">
-        <h1>Casa en venta frente al Bosque</h1>
+<article class="contenedor seccion contenido-centrado">
 
-        <picture>
-            <source srcset="build/img/destacada2.webp" type="webp">
-            <source srcset="build/img/destacada2.jpg" type="jpeg">
-            <img loading="lazy" src="build/img/destacada2.jpg" alt="Imagen de la Propiedad">
-        </picture>
+    <h1> <?php $entrada->titulo ?></h1>
 
-        <p class="informacion-meta">Escrito el: <span>20/7/2023</span> por <span>Admin</span></p>
+    <picture>
+        <img loading="lazy" src="/imagenes/<?php echo $entrada->imagen; ?>" alt="Imagen de la Propiedad">
+    </picture>
 
-        <div class="resumen-propiedad">
+    <p class="informacion-meta">Escrito el: <span><?php echo $entrada->creado; ?></span> por <span><?php echo $entrada->creador; ?></span></p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque distinctio sint placeat, repudiandae
-                alias quas dolorum nesciunt pariatur, doloremque reprehenderit nihil expedita illo, modi cum suscipit
-                hic tenetur at eligendi.</p>
+    <div class="resumen-propiedad">
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque distinctio sint placeat, repudiandae
-                alias quas dolorum nesciunt pariatur, doloremque reprehenderit nihil expedita illo, modi cum suscipit
-                hic tenetur at eligendi.</p>
+        <p><?php echo $entrada->descripcion; ?></p>
+    </div>
+</article>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque distinctio sint placeat, repudiandae
-                alias quas dolorum nesciunt pariatur, doloremque reprehenderit nihil expedita illo, modi cum suscipit
-                hic tenetur at eligendi.</p>
-        </div>
-    </main>
+
