@@ -1,6 +1,6 @@
-<div class="contenedor seccion seccion-inferior">
+<div class="contenedor seccion">
     <section class="blog">
         <h3>Nuestro Blog</h3>
-
-    <?php include 'listadoEntradas.php' ?>
+        <?php include 'listadoEntradas.php' ?>
+    </section>
 </div>

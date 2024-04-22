@@ -1,6 +1,6 @@
 <article class="contenedor seccion contenido-centrado">
 
-    <h1> <?php $entrada->titulo ?></h1>
+    <h1> <?php echo $entrada->titulo ?></h1>
 
     <picture>
         <img loading="lazy" src="/imagenes/<?php echo $entrada->imagen; ?>" alt="Imagen de la Propiedad">
