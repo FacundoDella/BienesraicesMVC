@@ -26,11 +26,12 @@ class Router
         $auth = $_SESSION['login'] ?? null;
 
         // Arreglo de rutas protegidas
-        $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar','/entradas/crear', '/entradas/actualizar', '/entradas/eliminar',];
+        $rutas_protegidas = ['/admin', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar', '/entradas/crear', '/entradas/actualizar', '/entradas/eliminar',];
 
 
         // Obtengo la URL que visite
-        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        // $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
 

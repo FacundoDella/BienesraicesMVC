@@ -1,13 +1,14 @@
 <?php
 
-function conectarDB() : mysqli
+function conectarDB(): mysqli
 {
-    $db = new mysqli('localhost', 'root', 'Wmlizxc123', 'bienesraices_crud'); // new mysqli es la forma orientada a objetos, mysqli_connect es la forma con mysqli
-  
-   if (!$db) {
+    $db = new mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']); // new mysqli es la forma orientada a objetos, mysqli_connect es la forma con mysqli
+
+    $db->set_charset('utf8');
+
+
+    if (!$db) {
         echo 'Error no se pudo conectar';
-        
     }
     return $db;
-  
 }
