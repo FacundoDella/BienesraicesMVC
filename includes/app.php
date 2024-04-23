@@ -1,10 +1,9 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
-use Dotenv\Dotenv;
 use Model\ActiveRecord; // 3 Mandamos a llamar a la class ActiveRecord
+require __DIR__ . '/../vendor/autoload.php';
 
-$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeload();
 
 require 'funciones.php';
