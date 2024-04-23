@@ -10,16 +10,7 @@
         </div>
         <div class="nosotros-texto">
             <p> <span>25 Años de Experiencia</span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et veritatis ad assumenda quisquam nihil,
-                eum
-                officiis nulla est saepe ratione expedita velit illo eos sit, quas alias odit provident voluptatum.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto iste hic, voluptas sed aliquam
-                obcaecati excepturi, blanditiis accusamus enim voluptatibus quo culpa veniam suscipit, iure vero
-                expedita sit nostrum nesciunt.
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic dolores cumque modi sit architecto
-                ullam
-                quo quisquam, similique nihil explicabo odit harum facere tempore doloremque sunt illo in id
-                tempora.
+            Somos un equipo apasionado por el sector inmobiliario, con años de experiencia y un compromiso inquebrantable con el servicio al cliente. Nuestra misión es ayudar a las personas a encontrar el hogar perfecto o la inversión ideal, siempre con honestidad y transparencia. Nos enorgullece construir relaciones sólidas y duraderas con nuestros clientes, y estamos aquí para ayudarte a cada paso del camino. Si buscas una empresa confiable y con un toque personal, has llegado al lugar correcto.
             </p>
 
         </div>
